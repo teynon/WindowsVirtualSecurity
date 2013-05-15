@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>
+            Trainer - Windows Security
+        </title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script type="text/Javascript" src="js/debug.js"></script>
+        <script type="text/Javascript" src="js/desktop.js"></script>
+        <script type="text/Javascript" src="js/applications/outlook.js"></script>
+        <script type="text/Javascript" src="js/applications/explorer.js"></script>
+        <script type="text/Javascript" src="js/jqueryDraggable.js"></script>
+        <script type="text/Javascript" src="js/jquerySortable.js"></script>
+        <script type="text/Javascript" src="js/functions.js"></script>
+    </head>
+    <body>
+        <div style="display: none;" id="error_modal">
+        </div>
+        <div class="body">
+            <div class="container">
+                <div class="mainBody">
+                    <div class="main">
+                        <div class="content">
+                        </div>
+                        <div class="desktop_icon" ondblclick="create_window(explorer());">
+                            <img src="images/My_Computer.png" alt="My Computer" />
+                            <div>
+                                My Computer
+                            </div>
+                        </div>
+                        <div class="desktop_icon" ondblclick="create_window(outlook());">
+                            <img src="images/applications/outlook-1.png" alt="Outlook" />
+                            <div>
+                                Outlook
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer_content">
+                <div class="start_button">
+                </div>
+                <div id="taskbar" class="taskbar">
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        <div class="start_menu_container" id="start_menu">
+            <div class="start_menu">
+                <div class="start_menu_item" onclick="create_window(outlook());">
+                    <img src="images/applications/outlook-1.png" alt="Outlook" />
+                    <div>
+                        Microsoft Outlook
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
