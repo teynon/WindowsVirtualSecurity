@@ -16,8 +16,8 @@ function explorer() {
 
                 },
                 'Close' : {
-                    click : function() {
-                        $(this).closest('.window').remove();
+                    click : function(event) {
+                        event.data.closeWindow();
                     }
                 }
             }
