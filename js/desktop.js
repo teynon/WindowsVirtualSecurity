@@ -198,7 +198,7 @@ $(function( ) {
             // --------------------------------------
             this.menuBar = $('<div class="window_menu"></div>').appendTo(this.bodyBox);
 
-            this.menuBar.append(this.buildMenu('File', this.options.params.menu.file));
+            this.menuBar.append(this.buildMenu('File', this.options.params.menu.file, that));
 
             // Content area
             // --------------------------------------
@@ -272,16 +272,15 @@ $(function( ) {
             this.element.css("max-height", $('body').outerHeight() - $('.footer').outerHeight());
         },
 
-        buildMenu : function(title, data) {
+        buildMenu : function(title, data, that) {
             var menuBody = $('<div class="menu_container"></div>');
             var menuButton = $('<div class="menu_title">' + title + '</div>').appendTo(menuBody);
             var menu = $('<div class="menu" style="display: none;"></div>').appendTo(menuBody);
             for (var i in data) {
                 if (data[i].Icon) data[i].Icon.appendTo(menu);
                 var menuOption = $('<div class="menu_option">' + i + '</div>').appendTo(menu);
-
-                if (data[i].click) menuOption.on("click", data[i].click);
-                if (data[i].blur) menuOption.on("blur", data[i].blur);
+                if (data[i].click) menuOption.on("click", that, data[i].click);
+                if (data[i].blur) menuOption.on("blur", that, data[i].blur);
             }
             menuButton.on("click", function(event) {
                 menu.toggle();
